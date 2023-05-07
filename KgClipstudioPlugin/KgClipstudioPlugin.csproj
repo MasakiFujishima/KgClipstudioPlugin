@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5778913-0E04-4827-B69D-403EF501AF65}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Loupedeck.KgClipstudioPlugin</RootNamespace>
+    <AssemblyName>KgClipstudioPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>$(SolutionDir)..\obj\</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(SolutionDir)..\bin\</BaseOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath Condition="$(OS) == 'Windows_NT'">$(LocalAppData)\Loupedeck\Plugins\KgClipstudio\win\</OutputPath>
+    <OutputPath Condition="$(OS) != 'Windows_NT'">$(HOME)/.local/share/Loupedeck/Plugins/KgClipstudio/mac/</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath Condition="$(OS) == 'Windows_NT'">$(BaseOutputPath)$(Configuration)\win\</OutputPath>
+    <OutputPath Condition="$(OS) != 'Windows_NT'">$(BaseOutputPath)$(Configuration)/mac/</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PluginApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath Condition="$(OS) == 'Windows_NT'">C:\Program Files (x86)\Loupedeck\Loupedeck2\PluginApi.dll</HintPath>
+      <HintPath Condition="$(OS) != 'Windows_NT'">/Applications/Loupedeck.app/Contents/MonoBundle/PluginApi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\Allview.cs" />
+    <Compile Include="Actions\Clipstudiopaintを終了.cs" />
+    <Compile Include="Actions\すべてのパレットを表示する隠す.cs" />
+    <Compile Include="Actions\すべてを選択.cs" />
+    <Compile Include="Actions\やり直し.cs" />
+    <Compile Include="Actions\ゆがみ.cs" />
+    <Compile Include="Actions\インク不透明度を上げる.cs" />
+    <Compile Include="Actions\インク不透明度を下げる.cs" />
+    <Compile Include="Actions\エアブラシ.cs" />
+    <Compile Include="Actions\キャンバス前のキャンバス.cs" />
+    <Compile Include="Actions\キャンバス次のキャンバス.cs" />
+    <Compile Include="Actions\グラデーション.cs" />
+    <Compile Include="Actions\グリッドにスナップ.cs" />
+    <Compile Include="Actions\コピー.cs" />
+    <Compile Include="Actions\コマ枠.cs" />
+    <Compile Include="Actions\ショートカットキー設定.cs" />
+    <Compile Include="Actions\スナップする特殊定規の切り替え.cs" />
+    <Compile Include="Actions\スポイト.cs" />
+    <Compile Include="Actions\ズームアウト.cs" />
+    <Compile Include="Actions\ズームイン.cs" />
+    <Compile Include="Actions\タイトルバーを隠すメニューバーを隠す.cs" />
+    <Compile Include="Actions\テキスト.cs" />
+    <Compile Include="Actions\デコレーション.cs" />
+    <Compile Include="Actions\フォルダーを作成してレイヤーを挿入.cs" />
+    <Compile Include="Actions\フキダシ.cs" />
+    <Compile Include="Actions\ブラシ先端ブラシ濃度を上げる.cs" />
+    <Compile Include="Actions\ブラシ先端ブラシ濃度を下げる.cs" />
+    <Compile Include="Actions\ペン.cs" />
+    <Compile Include="Actions\メインカラーとサブカラーを切り替え.cs" />
+    <Compile Include="Actions\ルーラー.cs" />
+    <Compile Include="Actions\レイヤーカラーの使用切り替え.cs" />
+    <Compile Include="Actions\レイヤーフォルダーを解除.cs" />
+    <Compile Include="Actions\レイヤー移動.cs" />
+    <Compile Include="Actions\レイヤー設定下のレイヤーでクリッピング.cs" />
+    <Compile Include="Actions\下のレイヤーと結合.cs" />
+    <Compile Include="Actions\使い方講座.cs" />
+    <Compile Include="Actions\保存.cs" />
+    <Compile Include="Actions\修飾キー設定.cs" />
+    <Compile Include="Actions\全体表示.cs" />
+    <Compile Include="Actions\再選択.cs" />
+    <Compile Include="Actions\切り取り.cs" />
+    <Compile Include="Actions\別名で保存.cs" />
+    <Compile Include="Actions\前のサブツールに切り替え.cs" />
+    <Compile Include="Actions\印刷.cs" />
+    <Compile Include="Actions\取り消し.cs" />
+    <Compile Include="Actions\回転反転右回転.cs" />
+    <Compile Include="Actions\回転反転左回転.cs" />
+    <Compile Include="Actions\図形.cs" />
+    <Compile Include="Actions\塗りつぶし.cs" />
+    <Compile Include="Actions\変形拡大縮小回転.cs" />
+    <Compile Include="Actions\変形自由変形.cs" />
+    <Compile Include="Actions\定規.cs" />
+    <Compile Include="Actions\定規にスナップ.cs" />
+    <Compile Include="Actions\描画色と透明色を切り替え.cs" />
+    <Compile Include="Actions\操作オブジェクト.cs" />
+    <Compile Include="Actions\操作タイムライン編集.cs" />
+    <Compile Include="Actions\操作ライトテーブル.cs" />
+    <Compile Include="Actions\操作レイヤー選択.cs" />
+    <Compile Include="Actions\散布効果粒子密度を上げる.cs" />
+    <Compile Include="Actions\散布効果粒子密度を下げる.cs" />
+    <Compile Include="Actions\新規.cs" />
+    <Compile Include="Actions\新規ラスターレイヤー.cs" />
+    <Compile Include="Actions\次のサブツールに切り替え.cs" />
+    <Compile Include="Actions\消しゴム.cs" />
+    <Compile Include="Actions\消去.cs" />
+    <Compile Include="Actions\特殊定規にスナップ.cs" />
+    <Compile Include="Actions\現在よりサイズの大きいプリセットを選択.cs" />
+    <Compile Include="Actions\現在よりサイズの小さいプリセットを選択.cs" />
+    <Compile Include="Actions\環境設定.cs" />
+    <Compile Include="Actions\移動回転.cs" />
+    <Compile Include="Actions\筆.cs" />
+    <Compile Include="Actions\線修正ごみ取り.cs" />
+    <Compile Include="Actions\編集対象にする上のレイヤー.cs" />
+    <Compile Include="Actions\編集対象にする下のレイヤー.cs" />
+    <Compile Include="Actions\自動選択.cs" />
+    <Compile Include="Actions\色混ぜ.cs" />
+    <Compile Include="Actions\色調補正色相彩度明度.cs" />
+    <Compile Include="Actions\色調補正階調の反転.cs" />
+    <Compile Include="Actions\虫めがね.cs" />
+    <Compile Include="Actions\表示レイヤーを結合.cs" />
+    <Compile Include="Actions\表示位置に貼り付け.cs" />
+    <Compile Include="Actions\表示位置をリセット.cs" />
+    <Compile Include="Actions\複数参照のOnOff.cs" />
+    <Compile Include="Actions\貼り付け.cs" />
+    <Compile Include="Actions\選択を解除.cs" />
+    <Compile Include="Actions\選択中のレイヤーを結合.cs" />
+    <Compile Include="Actions\選択範囲.cs" />
+    <Compile Include="Actions\選択範囲を反転.cs" />
+    <Compile Include="Actions\選択範囲外を消去.cs" />
+    <Compile Include="Actions\鉛筆.cs" />
+    <Compile Include="Actions\閉じる.cs" />
+    <Compile Include="Actions\開く.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="KgClipstudioApplication.cs" />
+    <Compile Include="KgClipstudioPlugin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="metadata\LoupedeckPackage.yaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="metadata\Icon16x16.png" />
+    <Content Include="metadata\Icon256x256.png" />
+    <Content Include="metadata\Icon32x32.png" />
+    <Content Include="metadata\Icon48x48.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent Condition="$(OS) == 'Windows_NT'">call "$(ProjectDir)BuildEvents\postbuild.cmd" "$(ProjectDir)" "$(TargetDir)"</PostBuildEvent>
+    <PostBuildEvent Condition="$(OS) != 'Windows_NT'">sh "$(ProjectDir)BuildEvents\postbuild" "$(ProjectDir)" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
